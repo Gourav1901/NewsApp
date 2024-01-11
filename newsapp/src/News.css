@@ -1,0 +1,45 @@
+/* Add these styles to your CSS file or use styled-components */
+
+.news-card {
+  padding: 10px;
+  border: 2px solid #666;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  background-color: #000000; /* Gray background color */
+  border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  transition: box-shadow 0.3s ease; /* Optional: Add a transition effect on hover */
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow on hover */
+  }
+}
+
+img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Optional: Add border radius for rounded image corners */
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Optional: Adjust the font size */
+  color: #fff; /* White text color */
+}
+
+p {
+  color: #fff; /* White text color */
+}
+
+button {
+  background-color: #0181d6; /* Blue color for the button */
+  color: #fff; /* White text color */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 13px;
+}
+
+button:hover {
+  background-color: #0543bf; /* Darker blue color on hover */
+}
