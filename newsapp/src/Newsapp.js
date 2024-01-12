@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import News from './News';
+import './News.css';
 
 function Newsapp() {
   const apiKey = 'c3744400a7414ede89f8bcccf94e64d0';
@@ -7,6 +8,8 @@ function Newsapp() {
   const [query, setQuery] = useState('tesla');
   const apiUrl = `https://newsapi.org/v2/everything?q=${query}&from=2024-01-01&sortBy=publishedAt&apiKey=${apiKey}`;
   const queryInputRef = useRef(null);
+
+
 
   useEffect(() => {
     fetchData();
@@ -50,10 +53,11 @@ function Newsapp() {
             marginLeft: '20px',
             borderRadius: '5px',
             border: '1px solid #ccc',
-            backgroundColor: 'gray', /* lowercase 'gray' for color */
             color: '#333', /* Text color */
             fontSize: '16px', /* Font size */
             outline: 'none', /* Remove the default input outline on focus */
+
+
 
           }}
           Search
@@ -76,35 +80,37 @@ function Newsapp() {
       <div style={{
         display: 'flex',
         gap: '7px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+
       }}>
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => handleCategoryClick(category)}
-            style={{
-              padding: '8px',
-              borderRadius: '5px',
-              backgroundColor: '#3498db',
-              color: 'white',
-              border: 'none',
-              cursor: 'pointer',
-              marginLeft: '20px',
-              transition: 'background-color 0.3s ease',
-            }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#217dbb'} // Change background color on hover
-            onMouseOut={(e) => e.target.style.backgroundColor = '#3498db'}
-          >
-            {category}
-          </button>
-        ))}
+        <div className="categories">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => handleCategoryClick(category)}
+              style={{
+                padding: '8px',
+                borderRadius: '5px',
+                backgroundColor: '#3498db',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer',
+                marginLeft: '20px',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#217dbb'} // Change background color on hover
+              onMouseOut={(e) => e.target.style.backgroundColor = '#3498db'}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
       </div>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 32%)',
-        justifyContent: 'space-between',
-        rowGap: '20px'
-      }}>
+      <div className="mainContainer"
+
+
+      >
         {Array.isArray(newsList) && newsList.length > 0 ? (
           newsList.map((news) => (
             <News key={news.url} news={news} />

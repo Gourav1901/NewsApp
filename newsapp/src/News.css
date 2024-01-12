@@ -4,9 +4,9 @@
   padding: 10px;
   border: 2px solid #666;
   width: 100%;
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  box-sizing:border-box; /* Ensure padding is included in the width */
   background-color: #000000; /* Gray background color */
-  border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  border-radius: 6px; /* Optional: Add border radius for rounded corners */
   transition: box-shadow 0.3s ease; /* Optional: Add a transition effect on hover */
 
   &:hover {
@@ -16,14 +16,17 @@
 
 img {
   width: 100%;
-  margin-bottom: 20px;
-  border-radius: 8px; /* Optional: Add border radius for rounded image corners */
+  height: 230px; /* Set a fixed height for the images */
+  object-fit: cover; /* Maintain the aspect ratio and cover the entire space */
+  border-radius: 8px
 }
 
 h2 {
   margin-bottom: 20px;
   font-size: 1.5rem; /* Optional: Adjust the font size */
   color: #fff; /* White text color */
+  
+
 }
 
 p {
@@ -42,4 +45,72 @@ button {
 
 button:hover {
   background-color: #0543bf; /* Darker blue color on hover */
+}
+
+.mainContainer{
+  display: grid;
+  grid-template-columns : repeat(4, 1fr);
+  justify-content: space-between;
+  row-gap: 4px;
+}
+.categories{
+  display: grid;
+  grid-template-columns: repeat(9,1fr)
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    row-gap: 2px;
+  } 
+  .categories{
+    display: grid;
+    grid-template-columns: repeat(9,1fr)
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    row-gap: 2px;
+  } 
+  .categories{
+    display: grid;
+    grid-template-columns: repeat(7,1fr)
+  }
+}
+
+
+
+@media screen and (max-width: 640px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-content: space-between;
+    row-gap: 2px;
+  } 
+  .categories{
+    display: grid;
+    grid-template-columns: repeat(5,1fr)
+  }
+}
+
+
+
+@media screen and (max-width: 390px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-content: space-between;
+    row-gap: 2px;
+  } 
+  .categories{
+    display: grid;
+    grid-template-columns: repeat(4,1fr)
+  }
 }
