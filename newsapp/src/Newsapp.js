@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import News from './News';
 import './News.css';
+import Shimmer from './Shimmer';
 
 function Newsapp() {
   const apiKey = 'c3744400a7414ede89f8bcccf94e64d0';
@@ -43,10 +44,11 @@ function Newsapp() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
+      <form onSubmit={handleSubmit} style={{ marginBottom: '3px', marginTop: '15px'}}>
         <input
           type="text"
           ref={queryInputRef}
+          placeholder="Search News, Location....."
           style={{
             padding: '10px',
             marginRight: '10px',
@@ -116,7 +118,7 @@ function Newsapp() {
             <News key={news.url} news={news} />
           ))
         ) : (
-          <p>No news available</p>
+         <Shimmer />
         )}
       </div>
     </div>
